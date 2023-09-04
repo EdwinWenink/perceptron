@@ -1,8 +1,8 @@
 # Writing a perceptron from scratch
 
-TODO:
+This small repo contains code for a perceptron binary classifier and visualizes the results.
 
-- Separate 2D plotting functionality from perceptron code
-- Separate data generation and put in its own module
-- Perhaps add GIF functionality?
+## Backlog
+
+- Perhaps add GIF functionality
 - Add non linearly separable data to showcase non-convergence
