@@ -20,9 +20,10 @@ def set_scale(scale: int):
 def abline(intercept, slope):
     """Plot a line from slope and intercept"""
     axes = plt.gca()
-    axes.set_xbound(-SCALE, SCALE)
+    axes.set_xbound(-SCALE*1.5, SCALE*1.5)
     x_vals = np.array(axes.get_xlim())
     y_vals = intercept + slope * x_vals
+    plt.xlim(-SCALE, SCALE)
     plt.ylim(-SCALE, SCALE)
     plt.plot(x_vals, y_vals, '--')
 
