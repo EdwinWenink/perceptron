@@ -27,10 +27,9 @@ def abline(intercept, slope):
     plt.plot(x_vals, y_vals, '--')
 
 
-def plot_decision_boundary(W: np.ndarray):
+def plot_2D_decision_boundary(W: np.ndarray):
     """
-    Given a fitted weights matrix (bias + 2 inputs)
-    plot the decision boundary.
+    Given a fitted weights matrix (bias + 2 inputs) plot the decision boundary.
     """
     intercept = -W[0] / W[2]
     if W[2] and W[1]:
@@ -47,8 +46,9 @@ def plot_2D_inputs(X: np.ndarray, y: np.ndarray):
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap)
 
 
-def plot_training_history(X: np.ndarray, y: np.ndarray, W_history: list[np.ndarray]):
+def plot_training_history(X: np.ndarray, y: np.ndarray,
+                          W_history: list[np.ndarray]):
     plot_2D_inputs(X, y)
     for i in range(0, len(W_history), len(X)):
-        plot_decision_boundary(W_history[i])
+        plot_2D_decision_boundary(W_history[i])
     plt.show()

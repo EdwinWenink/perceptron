@@ -1,4 +1,5 @@
-from src.generate_data import generate_linearly_separable_dataset
+from src.generate_data import (generate_linearly_separable_dataset, get_AND,
+                               get_material_implication)
 from src.perceptron import Perceptron
 from src.visualise import plot_training_history, set_scale
 
