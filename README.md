@@ -1,3 +1,5 @@
+[![Pylint](https://github.com/EdwinWenink/perceptron/actions/workflows/pylint.yml/badge.svg)](https://github.com/EdwinWenink/perceptron/actions/workflows/pylint.yml)
+
 # Writing a perceptron from scratch
 
 This small repo contains code for a perceptron binary classifier and visualizes the results.
