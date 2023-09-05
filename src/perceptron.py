@@ -58,21 +58,3 @@ class Perceptron():
         print("Epochs trained:", i+1)
         return self.W_history
 
-
-
-
-if __name__ == '__main__':
-    # Training example: material implication A -> B
-    # Without bias this will not converge for orthogonal inputs
-    # X, y = get_material_implication()
-    # X, y = get_AND()
-    X, y = generate_linearly_separable_dataset(0.5, 1.55)
-
-    # Learning rate
-    learning_rate = .1
-
-    # Train the perceptron
-    perceptron = Perceptron(n_inputs=X.shape[1], learning_rate=learning_rate, max_epochs=100)
-    perceptron.train(X, y)
-
-    plot_training_history(X, perceptron.W_history)
