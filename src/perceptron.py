@@ -1,3 +1,7 @@
+'''
+Module defining the Perceptron class.
+'''
+
 import numpy as np
 
 
@@ -7,14 +11,22 @@ class Perceptron():
     '''
 
     def __init__(self, n_inputs: int, learning_rate: float, max_epochs: int = 100):
-        # Initialize zero weights for each input node + for the bias node
+        '''
+        Initialize Perceptron with zero weights for each input node
+        and for the bias node.'''
         self.W = np.zeros((n_inputs+1, ))
         self.W_history = [self.W]
         self.learning_rate = learning_rate
         self.max_epochs = max_epochs
 
     def forward(self, x: np.ndarray, y: int | None = None):
-        # NOTE this adds a dummy input for the bias term
+        '''
+        Make a forward pass to make predictions and return a delta.
+        The delta will be all zeros unless targets y are provided.
+
+        NOTE that a dummy input of 1 is added for the bias term
+        so this does not have to be included in the model input.
+        '''
         x = np.hstack((1, x))
         y_pred = 1 if self.W.dot(x) > 0 else -1
 
@@ -31,7 +43,7 @@ class Perceptron():
         Update weights and return whether
         the weights were updated.
         '''
-        y_pred, delta = self.forward(x, y)
+        _, delta = self.forward(x, y)
         self.W += delta
 
         # Keep track of update history
@@ -39,7 +51,10 @@ class Perceptron():
         return delta.any()
 
     def train(self, X: np.ndarray, y: np.ndarray):
-        # Store weights for later plotting
+        '''
+        Train the perceptron and store the history
+        of weights for later plotting.
+        '''
         for i in range(self.max_epochs):
             # Loop over all data points
             misclassifications = 0
@@ -57,4 +72,3 @@ class Perceptron():
 
         print("Epochs trained:", i+1)
         return self.W_history
-

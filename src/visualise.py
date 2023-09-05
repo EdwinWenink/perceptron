@@ -10,9 +10,7 @@ SCALE = 1
 
 
 def set_scale(scale: int):
-    """
-    For better plotting results, set the scale to the scale of the data.
-    """
+    """For better plotting results, set the scale to the scale of the data."""
     global SCALE
     SCALE = scale
 
@@ -42,6 +40,7 @@ def plot_2D_decision_boundary(W: np.ndarray):
 
 
 def plot_2D_inputs(X: np.ndarray, y: np.ndarray):
+    """Plot the input data."""
     assert X.shape[1] == 2
     cmap = colors.ListedColormap(['blue', 'red'])
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap)
@@ -49,6 +48,7 @@ def plot_2D_inputs(X: np.ndarray, y: np.ndarray):
 
 def plot_training_history(X: np.ndarray, y: np.ndarray,
                           W_history: list[np.ndarray]):
+    """Plot the training history of Perceptron weights."""
     plot_2D_inputs(X, y)
     for i in range(0, len(W_history), len(X)):
         plot_2D_decision_boundary(W_history[i])

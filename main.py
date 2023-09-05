@@ -1,4 +1,4 @@
-from src.generate_data import (generate_linearly_separable_dataset, get_AND,
+from src.generate_data import (generate_linearly_separable_dataset, get_and,
                                get_material_implication)
 from src.perceptron import Perceptron
 from src.visualise import plot_training_history, set_scale
@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     # Training example: material implication A -> B
     # X, y = get_material_implication()
-    # X, y = get_AND()
+    # X, y = get_and()
 
     # Or instead generate linearly separable data using intercept and slope
     # We expect that the fitted decision boundary will have similar intercept and slope

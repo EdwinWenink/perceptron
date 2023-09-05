@@ -6,6 +6,7 @@ import numpy as np
 
 
 def get_material_implication():
+    '''Get input data corresponding to the material implication A -> B.'''
     # Without bias term perceptron will not converge for orthogonal inputs
     X = np.array([[1, 1],  # True
                   [1, -1],  # False
@@ -18,7 +19,8 @@ def get_material_implication():
     return X, y
 
 
-def get_AND():
+def get_and():
+    '''Get input data corresponding to the logical AND operation.'''
     X = np.array([[1, 1],  # True
                   [1, -1],  # False
                   [-1, 1],  # False
